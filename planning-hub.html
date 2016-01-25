@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Surrey Planning Hub</title>
+    <title>Surrey Planning Hub - Surrey Digital Services</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=yes">
     <meta http-equiv="content-type" content="text/html; charset=windows-1252">
     <style>
@@ -21,12 +21,7 @@
 
     <script>
       function main() {
-        cartodb.createVis('map', '//surreyheath.cartodb.com/api/v2/viz/dcd6e820-c113-11e5-a118-0ecfd53eb7d3/viz.json', 
-            { 
-              mobile_layout: true,
-              title: true,
-              description: true 
-            })
+        cartodb.createVis('map', '//surreyheath.cartodb.com/api/v2/viz/dcd6e820-c113-11e5-a118-0ecfd53eb7d3/viz.json', { mobile_layout: true })
           .done(function(vis, layers) {
             // you can get the native map to work with it
             var map = vis.getNativeMap();
