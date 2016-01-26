@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Surrey Planning Hub - Surrey Digital Services</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=yes">
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <style>
+      html, body, #map {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <link rel="stylesheet" href="//libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css">
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <!-- include cartodb.js library -->
+    <script src="//libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+
+    <script>
+      function main() {
+        cartodb.createVis('map', '//surreyheath.cartodb.com/viz/0a2e5ade-2c62-11e5-b7a1-0e9d821ea90d/embed_map', { mobile_layout: true })
+          .done(function(vis, layers) {
+            // you can get the native map to work with it
+            var map = vis.getNativeMap();
+            // now, perform any operations you need
+            // map.setZoom(10);
+            // map.panTo([50.5, 30.5]);         
+            map.options.maxZoom =19;
+            // Try HTML5 geolocation
+            if(navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function(position) {
+                L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+                map.setView([position.coords.latitude, position.coords.longitude], 18);
+              }, function() { });
+            } else {
+              // Browser doesn't support Geolocation
+              alert("Geolocation is disabled");
+            }
+          })
+          .error(function(err) {
+            console.log(err);
+          });
+        }
+      window.onload = main;
+    </script>
+  </body>
+</html>
