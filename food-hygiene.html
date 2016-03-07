@@ -11,17 +11,16 @@
         margin: 0;
       }
     </style>
-    <link rel="stylesheet" href="//libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css">
+    <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css">
   </head>
   <body>
     <div id="map"></div>
 
-    <!-- include cartodb.js library -->
-    <script src="//libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
 
     <script>
       function main() {
-        cartodb.createVis('map', '//surreyheath.cartodb.com/api/v2/viz/0a2e5ade-2c62-11e5-b7a1-0e9d821ea90d/viz.json', { mobile_layout: true })
+        cartodb.createVis('map', 'https://surreyheath.cartodb.com/api/v2/viz/0a2e5ade-2c62-11e5-b7a1-0e9d821ea90d/viz.json', { mobile_layout: true })
           .done(function(vis, layers) {
             // you can get the native map to work with it
             var map = vis.getNativeMap();
