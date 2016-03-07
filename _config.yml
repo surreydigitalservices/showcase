@@ -6,6 +6,7 @@ baseurl: "/showcase" # the subpath of your site, e.g. /blog/
 url: "http://surreydigitalservices.github.io" # the base hostname & protocol for your site
 twitter_username: SurreyDS
 github_username:  SurreyDigitalServices
+analytics : UA-74647974-1
 
 # Build settings
 safe: true
